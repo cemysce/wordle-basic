@@ -17,6 +17,7 @@ hard_mode = (len(sys.argv) >= 2 and sys.argv[1] == 'hard')
 print(f'WORDLE{": Hard Mode" if hard_mode else ""}')
 num_guesses_left = TOTAL_GUESSES
 answer = random.choice(VALID_ANSWERS)
+correct_chars = [None]*len(answer)
 misplaced_chars = []
 while num_guesses_left > 0:
     print(f'\n{num_guesses_left} guess(es) left')
@@ -25,21 +26,23 @@ while num_guesses_left > 0:
         print('Correct!')
         break
     if guess in VALID_GUESSES:
-        if hard_mode and any(guess.count(m) < misplaced_chars.count(m) for m in misplaced_chars):
-            print('In hard mode, all misplaced characters from previous guess must be used in following guess!')
+        if hard_mode and (   any(guess.count(m) < misplaced_chars.count(m) for m in misplaced_chars)
+                          or any(guess[i] != c for i,c in enumerate(correct_chars) if c)):
+            print('In hard mode, guesses must contain all misplaced characters and correct\n'
+                  'characters (in correct positions) from previous guess.')
             continue
         print('Wrong!')
-        correct_chars = [guess[i] for i in range(len(guess)) if guess[i] == answer[i]]
+        correct_chars = [(guess[i] if guess[i] == answer[i] else None) for i in range(len(guess))]
         misplaced_chars.clear()
         for i in range(len(guess)):
             if guess[i] == answer[i]:
-                c = f' {guess[i].upper()} '
+                s = f' {guess[i].upper()} '
             elif answer.count(guess[i]) > correct_chars.count(guess[i]):
-                c = f'({guess[i].upper()})'
+                s = f'({guess[i].upper()})'
                 misplaced_chars.append(guess[i])
             else:
-                c = ' _ '
-            print(f' {c}', end='')
+                s = ' _ '
+            print(f' {s}', end='')
         print()
         num_guesses_left -= 1
         continue
