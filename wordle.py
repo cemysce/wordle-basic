@@ -37,7 +37,7 @@ while num_guesses_left > 0:
         for i in range(len(guess)):
             if guess[i] == answer[i]:
                 s = f' {guess[i].upper()} '
-            elif answer.count(guess[i]) > correct_chars.count(guess[i]):
+            elif answer.count(guess[i]) > misplaced_chars.count(guess[i]) + correct_chars.count(guess[i]):
                 s = f'({guess[i].upper()})'
                 misplaced_chars.append(guess[i])
             else:
