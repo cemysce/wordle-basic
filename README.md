@@ -1,6 +1,12 @@
 # wordle-basic
 
-Quick and dirty Wordle clones.
+Quick and dirty [Wordle](https://www.powerlanguage.co.uk/wordle/) clones.
+
+All credit for the game's name, gameplay logic, and visual design should go to [Josh Wardle](https://www.powerlanguage.co.uk/).
+The programs here were merely fun exercises for me, and may be useful to others.
+
+The only bit of logic that was replicated from upstream Wordle's JavaScript code is the logic for computing the daily game number and its solution.
+Everything else was written from scratch by me to replicate the gameplay logic as I understood it from playing the game.
 
 * `basic/`
   * `wordle-basic.py` &ndash; My initial implementation, including hard mode support (run with `hard` as argument), in 39 lines of Python.
