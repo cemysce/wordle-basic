@@ -1,2 +1,3 @@
 # wordle-basic
-Quick and dirty Wordle clones
+
+Quick and dirty Wordle clones.
