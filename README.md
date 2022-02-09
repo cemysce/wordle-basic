@@ -2,7 +2,7 @@
 
 Quick and dirty [Wordle](https://www.powerlanguage.co.uk/wordle/) clones.
 
-All credit for the game's name, gameplay logic, and visual design should go to [Josh Wardle](https://www.powerlanguage.co.uk/).
+Credit for the game's name, gameplay logic, and visual design belongs to [Josh Wardle](https://www.powerlanguage.co.uk/).
 The programs here were merely fun exercises for me, and may be useful to others.
 
 The only bit of logic that was replicated from upstream Wordle's JavaScript code is the logic for computing the daily game number and its solution.
