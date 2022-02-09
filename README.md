@@ -5,8 +5,7 @@ Quick and dirty [Wordle](https://www.powerlanguage.co.uk/wordle/) clones.
 Credit for the game's name, gameplay logic, and visual design belongs to [Josh Wardle](https://www.powerlanguage.co.uk/).
 The programs here were merely fun exercises for me, and may be useful to others.
 
-The only bit of logic that was replicated from upstream Wordle's JavaScript code is the logic for computing the daily game number and its solution.
-Everything else was written from scratch by me to replicate the gameplay logic as I understood it from playing the game.
+Except where noted below, everything here was written by myself from scratch, to replicate the gameplay logic as I understood it from playing the game.
 
 * `basic/`
   * `wordle-basic.py` &ndash; My initial implementation, including hard mode support, in 39 lines of Python.
@@ -25,3 +24,4 @@ Everything else was written from scratch by me to replicate the gameplay logic a
       but I quickly realized I wanted to make a full-fledged replica instead.
   * `decode-solution.py` &ndash; A replication in Python of the logic Wordle uses to determine the daily game number and solution.
     * _This is only for reference. The program doesn't do anything useful on its own._
+    * The logic here was reproduced by inspecting upstream Wordle's JavaScript code.
